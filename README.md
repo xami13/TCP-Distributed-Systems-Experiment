@@ -18,7 +18,7 @@ Two separate Node.js processes communicate over TCP at `127.0.0.1:4000`. No npm 
 In PowerShell:
 
 ```powershell
-Set-Location D:\.dev\.pc\sd-lab-02
+Set-Location 
 node --version
 node experiments.js baseline
 node experiments.js latency
