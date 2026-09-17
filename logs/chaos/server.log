@@ -1,0 +1,3 @@
+[server pid=33796] listening on 127.0.0.1:4000; ackDelayMs=200
+[server pid=33796] client connected
+[server pid=33796] received "hello-1"

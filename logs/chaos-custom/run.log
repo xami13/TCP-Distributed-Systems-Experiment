@@ -1,0 +1,9 @@
+2026-09-17T21:03:34.574Z mode=chaos; OS=win32 10.0.26200; Node=v24.19.0
+2026-09-17T21:03:34.593Z Port 4000 bind check passed
+2026-09-17T21:03:34.606Z server.js started pid=27964
+2026-09-17T21:03:34.691Z client.js started pid=14292
+2026-09-17T21:03:35.229Z Process snapshot: server pid=27964 alive=true; client pid=14292 alive=true
+2026-09-17T21:03:35.344Z First acknowledgment observed; waited 100ms; forcibly terminating only server pid=27964
+2026-09-17T21:03:35.376Z Client exit={"code":1,"signal":null}
+2026-09-17T21:03:35.376Z Server exit={"code":null,"signal":"SIGKILL"}
+2026-09-17T21:03:35.384Z Experiment completed

@@ -1,0 +1,13 @@
+[client pid=22800] starting
+[client pid=22800] connected to 127.0.0.1:4000
+[client pid=22800] greeting from server pid=5552; counter=1
+[client pid=22800] sending "hello-1"; sinceGreetingMs=254.679
+[client pid=22800] ack "hello-1"; server pid=5552; counter=2; RTT=1.007ms
+[client pid=22800] sending "hello-2"; sinceGreetingMs=1265.628
+[client pid=22800] ack "hello-2"; server pid=5552; counter=3; RTT=0.795ms
+[client pid=22800] sending "hello-3"; sinceGreetingMs=2275.740
+[client pid=22800] ack "hello-3"; server pid=5552; counter=4; RTT=0.530ms
+[client pid=22800] idle timeout 5000ms
+[client pid=22800] closed; hadError=false; reason=idle timeout 5000ms; acknowledged=3/3
+[client pid=22800] RTT samples: [1.007, 0.795, 0.530] ms
+[client pid=22800] exit code=0

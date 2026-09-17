@@ -1,0 +1,21 @@
+{
+  "mode": "chaos",
+  "recordedAt": "2026-09-17T21:03:35.377Z",
+  "ackDelayMs": 200,
+  "serverPid": 27964,
+  "clientPid": 14292,
+  "bothAlive": true,
+  "serverAliveAfterClient": false,
+  "clientExit": {
+    "code": 1,
+    "signal": null
+  },
+  "serverExit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "rttsMs": [
+    205.107
+  ],
+  "meanRttMs": 205.107
+}

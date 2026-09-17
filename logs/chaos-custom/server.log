@@ -1,0 +1,3 @@
+[server pid=27964] listening on 127.0.0.1:4000; ackDelayMs=200
+[server pid=27964] client connected
+[server pid=27964] received "custom payload with spaces"

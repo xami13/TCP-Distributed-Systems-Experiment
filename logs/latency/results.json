@@ -1,0 +1,23 @@
+{
+  "mode": "latency",
+  "recordedAt": "2026-09-17T21:10:55.249Z",
+  "ackDelayMs": 200,
+  "serverPid": 42676,
+  "clientPid": 30308,
+  "bothAlive": true,
+  "serverAliveAfterClient": true,
+  "clientExit": {
+    "code": 0,
+    "signal": null
+  },
+  "serverExit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "rttsMs": [
+    216.736,
+    201.395,
+    216.847
+  ],
+  "meanRttMs": 211.6593333333333
+}

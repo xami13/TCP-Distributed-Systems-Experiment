@@ -1,0 +1,10 @@
+2026-09-17T21:10:04.827Z mode=baseline; OS=win32 10.0.26200; Node=v24.19.0
+2026-09-17T21:10:04.851Z Port 4000 bind check passed
+2026-09-17T21:10:04.864Z server.js started pid=5552
+2026-09-17T21:10:04.935Z client.js started pid=22800
+2026-09-17T21:10:05.251Z Process snapshot: server pid=5552 alive=true; client pid=22800 alive=true
+2026-09-17T21:10:12.294Z Client exit={"code":0,"signal":null}
+2026-09-17T21:10:12.294Z Server remains alive after client exit: true
+2026-09-17T21:10:12.295Z Cleanup: stopping only server pid=5552
+2026-09-17T21:10:12.325Z Server exit={"code":null,"signal":"SIGTERM"}
+2026-09-17T21:10:12.332Z Experiment completed

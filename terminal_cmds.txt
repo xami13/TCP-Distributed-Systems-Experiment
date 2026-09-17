@@ -1,0 +1,153 @@
+PS D:\.dev\.pc\sd-lab-02> node experiments.js baseline
+2026-09-17T21:10:04.827Z mode=baseline; OS=win32 10.0.26200; Node=v24.19.0
+2026-09-17T21:10:04.851Z Port 4000 bind check passed
+2026-09-17T21:10:04.864Z server.js started pid=5552
+2026-09-17T21:10:04.935Z client.js started pid=22800
+2026-09-17T21:10:05.251Z Process snapshot: server pid=5552 alive=true; client pid=22800 alive=true
+2026-09-17T21:10:12.294Z Client exit={"code":0,"signal":null}
+2026-09-17T21:10:12.294Z Server remains alive after client exit: true
+2026-09-17T21:10:12.295Z Cleanup: stopping only server pid=5552
+2026-09-17T21:10:12.325Z Server exit={"code":null,"signal":"SIGTERM"}
+
+=== server.log ===
+[server pid=5552] listening on 127.0.0.1:4000; ackDelayMs=0
+[server pid=5552] client connected
+[server pid=5552] received "hello-1"
+[server pid=5552] received "hello-2"
+[server pid=5552] received "hello-3"
+[server pid=5552] idle timeout 5000ms
+[server pid=5552] disconnected; hadError=false
+
+
+=== client.log ===
+[client pid=22800] starting
+[client pid=22800] connected to 127.0.0.1:4000
+[client pid=22800] greeting from server pid=5552; counter=1
+[client pid=22800] sending "hello-1"; sinceGreetingMs=254.679
+[client pid=22800] ack "hello-1"; server pid=5552; counter=2; RTT=1.007ms
+[client pid=22800] sending "hello-2"; sinceGreetingMs=1265.628
+[client pid=22800] ack "hello-2"; server pid=5552; counter=3; RTT=0.795ms
+[client pid=22800] sending "hello-3"; sinceGreetingMs=2275.740
+[client pid=22800] ack "hello-3"; server pid=5552; counter=4; RTT=0.530ms
+[client pid=22800] idle timeout 5000ms
+[client pid=22800] closed; hadError=false; reason=idle timeout 5000ms; acknowledged=3/3
+[client pid=22800] RTT samples: [1.007, 0.795, 0.530] ms
+[client pid=22800] exit code=0
+
+2026-09-17T21:10:12.332Z Experiment completed
+PS D:\.dev\.pc\sd-lab-02> node experiments.js latency
+2026-09-17T21:10:47.543Z mode=latency; OS=win32 10.0.26200; Node=v24.19.0
+2026-09-17T21:10:47.558Z Port 4000 bind check passed
+2026-09-17T21:10:47.570Z server.js started pid=42676
+2026-09-17T21:10:47.647Z client.js started pid=30308
+2026-09-17T21:10:48.197Z Process snapshot: server pid=42676 alive=true; client pid=30308 alive=true
+2026-09-17T21:10:55.218Z Client exit={"code":0,"signal":null}
+2026-09-17T21:10:55.218Z Server remains alive after client exit: true
+2026-09-17T21:10:55.219Z Cleanup: stopping only server pid=42676
+2026-09-17T21:10:55.248Z Server exit={"code":null,"signal":"SIGTERM"}
+
+=== server.log ===
+[server pid=42676] listening on 127.0.0.1:4000; ackDelayMs=200
+[server pid=42676] client connected
+[server pid=42676] received "hello-1"
+[server pid=42676] received "hello-2"
+[server pid=42676] received "hello-3"
+[server pid=42676] idle timeout 5000ms
+[server pid=42676] disconnected; hadError=false
+
+
+=== client.log ===
+[client pid=30308] starting
+[client pid=30308] connected to 127.0.0.1:4000
+[client pid=30308] greeting from server pid=42676; counter=1
+[client pid=30308] sending "hello-1"; sinceGreetingMs=254.395
+[client pid=30308] ack "hello-1"; server pid=42676; counter=2; RTT=216.736ms
+[client pid=30308] sending "hello-2"; sinceGreetingMs=1265.158
+[client pid=30308] ack "hello-2"; server pid=42676; counter=3; RTT=201.395ms
+[client pid=30308] sending "hello-3"; sinceGreetingMs=2279.523
+[client pid=30308] ack "hello-3"; server pid=42676; counter=4; RTT=216.847ms
+[client pid=30308] idle timeout 5000ms
+[client pid=30308] closed; hadError=false; reason=idle timeout 5000ms; acknowledged=3/3
+[client pid=30308] RTT samples: [216.736, 201.395, 216.847] ms
+[client pid=30308] exit code=0
+
+2026-09-17T21:10:55.254Z Experiment completed
+PS D:\.dev\.pc\sd-lab-02> .\chaos.ps1
+2026-09-17T21:11:31.211Z mode=chaos; OS=win32 10.0.26200; Node=v24.19.0
+2026-09-17T21:11:31.224Z Port 4000 bind check passed
+2026-09-17T21:11:31.235Z server.js started pid=33796
+2026-09-17T21:11:31.303Z client.js started pid=29628
+2026-09-17T21:11:31.839Z Process snapshot: server pid=33796 alive=true; client pid=29628 alive=true
+2026-09-17T21:11:31.940Z First acknowledgment observed; waited 100ms; forcibly terminating only server pid=33796
+2026-09-17T21:11:31.972Z Client exit={"code":1,"signal":null}
+2026-09-17T21:11:31.973Z Server exit={"code":null,"signal":"SIGKILL"}
+
+=== server.log ===
+[server pid=33796] listening on 127.0.0.1:4000; ackDelayMs=200
+[server pid=33796] client connected
+[server pid=33796] received "hello-1"
+
+
+=== client.log ===
+[client pid=29628] starting
+[client pid=29628] connected to 127.0.0.1:4000
+[client pid=29628] greeting from server pid=33796; counter=1
+[client pid=29628] sending "hello-1"; sinceGreetingMs=257.828
+[client pid=29628] ack "hello-1"; server pid=33796; counter=2; RTT=201.534ms
+[client pid=29628] socket error: ECONNRESET
+[client pid=29628] closed; hadError=true; reason=socket error: ECONNRESET; acknowledged=1/3
+[client pid=29628] RTT samples: [201.534] ms
+[client pid=29628] exit code=1
+
+2026-09-17T21:11:31.982Z Experiment completed
+PS D:\.dev\.pc\sd-lab-02> node verify.js
+Verification started 2026-09-17T21:11:44.780Z; Node=v24.19.0
+PASS server: split input, multiple lines, exact echoes, PID and counters
+PASS server: idle peer disconnected at five-second timeout
+[server pid=35636] listening on 127.0.0.1:4000; ackDelayMs=0
+[server pid=35636] client connected
+[server pid=35636] received "fragmented"
+[server pid=35636] received "second"
+[server pid=35636] received "third"
+[server pid=35636] idle timeout 5000ms
+[server pid=35636] disconnected; hadError=false
+Observed exit: pid=35636 code=null signal=SIGTERM
+[client pid=26172] starting
+[client pid=26172] socket error: ECONNREFUSED
+[client pid=26172] closed; hadError=true; reason=socket error: ECONNREFUSED; acknowledged=0/3
+[client pid=26172] RTT samples: [] ms
+[client pid=26172] exit code=1
+Observed exit: pid=26172 code=1 signal=null
+PASS client: refused connection preserves error and empty RTT summary
+[client pid=35828] starting
+[client pid=35828] connected to 127.0.0.1:4000
+[client pid=35828] greeting from server pid=41196; counter=1
+[client pid=35828] sending "hello-1"; sinceGreetingMs=264.127
+[client pid=35828] sending "hello-2"; sinceGreetingMs=1275.235
+[client pid=35828] sending "hello-3"; sinceGreetingMs=2290.051
+[client pid=35828] ack "hello-1"; server pid=41196; counter=2; RTT=2088.438ms
+[client pid=35828] ack "hello-2"; server pid=41196; counter=3; RTT=1077.432ms
+[client pid=35828] ack "hello-3"; server pid=41196; counter=4; RTT=62.655ms
+[client pid=35828] remote end (FIN)
+[client pid=35828] closed; hadError=false; reason=remote end (FIN); acknowledged=3/3
+[client pid=35828] RTT samples: [2088.438, 1077.432, 62.655] ms
+[client pid=35828] exit code=0
+Observed exit: pid=35828 code=0 signal=null
+PASS client: split greeting/JSON and multiple acknowledgments in a stream
+[client pid=41084] starting
+[client pid=41084] connected to 127.0.0.1:4000
+[client pid=41084] idle timeout 5000ms
+[client pid=41084] closed; hadError=false; reason=idle timeout 5000ms; acknowledged=0/3
+[client pid=41084] RTT samples: [] ms
+[client pid=41084] exit code=0
+Observed exit: pid=41084 code=0 signal=null
+PASS client: idle timeout and timer cleanup
+[client pid=17960] starting
+[client pid=17960] connected to 127.0.0.1:4000
+[client pid=17960] hard timeout 8000ms
+[client pid=17960] closed; hadError=false; reason=hard timeout 8000ms; acknowledged=0/3
+[client pid=17960] RTT samples: [] ms
+[client pid=17960] exit code=1
+Observed exit: pid=17960 code=1 signal=null
+PASS client: hard timeout even while incoming bytes prevent idle timeout
+All verification checks passed. Test-server RTTs above are not baseline measurements.

@@ -1,0 +1,9 @@
+[client pid=29628] starting
+[client pid=29628] connected to 127.0.0.1:4000
+[client pid=29628] greeting from server pid=33796; counter=1
+[client pid=29628] sending "hello-1"; sinceGreetingMs=257.828
+[client pid=29628] ack "hello-1"; server pid=33796; counter=2; RTT=201.534ms
+[client pid=29628] socket error: ECONNRESET
+[client pid=29628] closed; hadError=true; reason=socket error: ECONNRESET; acknowledged=1/3
+[client pid=29628] RTT samples: [201.534] ms
+[client pid=29628] exit code=1

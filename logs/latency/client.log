@@ -1,0 +1,13 @@
+[client pid=30308] starting
+[client pid=30308] connected to 127.0.0.1:4000
+[client pid=30308] greeting from server pid=42676; counter=1
+[client pid=30308] sending "hello-1"; sinceGreetingMs=254.395
+[client pid=30308] ack "hello-1"; server pid=42676; counter=2; RTT=216.736ms
+[client pid=30308] sending "hello-2"; sinceGreetingMs=1265.158
+[client pid=30308] ack "hello-2"; server pid=42676; counter=3; RTT=201.395ms
+[client pid=30308] sending "hello-3"; sinceGreetingMs=2279.523
+[client pid=30308] ack "hello-3"; server pid=42676; counter=4; RTT=216.847ms
+[client pid=30308] idle timeout 5000ms
+[client pid=30308] closed; hadError=false; reason=idle timeout 5000ms; acknowledged=3/3
+[client pid=30308] RTT samples: [216.736, 201.395, 216.847] ms
+[client pid=30308] exit code=0

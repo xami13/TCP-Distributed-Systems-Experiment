@@ -1,0 +1,11 @@
+# Editor / local index data
+.puku/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Verification scratch logs (kept locally for debugging, not part of the lab evidence)
+logs/verification.log
+logs/verification-first-attempt.log
+logs/final-check.log

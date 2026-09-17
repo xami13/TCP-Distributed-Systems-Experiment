@@ -1,0 +1,9 @@
+[client pid=14292] starting
+[client pid=14292] connected to 127.0.0.1:4000
+[client pid=14292] greeting from server pid=27964; counter=1
+[client pid=14292] sending "custom payload with spaces"; sinceGreetingMs=262.661
+[client pid=14292] ack "custom payload with spaces"; server pid=27964; counter=2; RTT=205.107ms
+[client pid=14292] socket error: ECONNRESET
+[client pid=14292] closed; hadError=true; reason=socket error: ECONNRESET; acknowledged=1/1
+[client pid=14292] RTT samples: [205.107] ms
+[client pid=14292] exit code=1

@@ -1,0 +1,7 @@
+[server pid=5552] listening on 127.0.0.1:4000; ackDelayMs=0
+[server pid=5552] client connected
+[server pid=5552] received "hello-1"
+[server pid=5552] received "hello-2"
+[server pid=5552] received "hello-3"
+[server pid=5552] idle timeout 5000ms
+[server pid=5552] disconnected; hadError=false
