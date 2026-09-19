@@ -53,7 +53,7 @@ node experiments.js chaos 'custom payload with spaces'
 Terminal A:
 
 ```powershell
-Set-Location D:\.dev\.pc\sd-lab-02
+Set-Location 
 $env:ACK_DELAY_MS = '0'
 node server.js
 ```
@@ -61,7 +61,7 @@ node server.js
 Terminal B:
 
 ```powershell
-Set-Location D:\.dev\.pc\sd-lab-02
+Set-Location 
 node client.js
 # Or one custom message:
 node client.js 'my message'
@@ -100,7 +100,7 @@ Verification takes about 22 seconds and needs port 4000 free. It records `logs/v
 The JavaScript is also usable with Node.js 18+ installed on Linux/WSL:
 
 ```bash
-cd /mnt/d/.dev/.pc/sd-lab-02
+cd 
 node experiments.js baseline
 node experiments.js latency
 node experiments.js chaos
